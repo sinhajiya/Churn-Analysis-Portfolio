@@ -118,6 +118,12 @@ SELECT
 FROM 
     churn_analysis_db.customer_data;
 
+Create View vw_churndata as 
+	SELECT * from prod_churn where Customer_Status IN ("CHURNED", "STAYED");
+
+CREATE View vw_JoinData as
+	SELECT * from prod_churn where Customer_Status = 'JOINED';
+
 
 
 
